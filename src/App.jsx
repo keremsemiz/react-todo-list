@@ -3,12 +3,29 @@ import './App.css'
 
 export default function App (){
   const [newItem, setNewItem] = useState("")
+  const [todos, setTodos] = useState([])
+
+  function handleSubmit(e){
+    e.preventDefault()
+
+    setTodos((currentTodos) => {
+      return[
+        ...currentTodos, { id: crypto.randomUUID(), title: "New Item", completed: false },
+      ]
+    }
+      
+
+  }
+  
   return(
     <>
-      <form className='new-item-form'>
+      <form onSubmit={handleSubmit} className='new-item-form'>
         <div className="form-row">
           <label htmlFor='item'>New Item</label>
-          <input type="text" id="item" />
+          <input value={newItem}
+            type="text"
+            id="item"
+            onChange={e => setNewItem(e.target.value)} />
         </div>
         <button className='btn'>Add Task</button>
       </form>
