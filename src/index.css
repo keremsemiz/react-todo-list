@@ -81,10 +81,14 @@ input:focus {
   color: #121212;
 }
 
-.header {
-  font-size: 2rem;
-  margin: 2rem 0 1rem;
-  color: #ffffff;
+.btn.btn-safety{
+  border-color: #FF9F30;
+  color: #FF9F30;
+}
+
+.btn.btn-safety:hover, .btn.btn-safety:focus-visible {
+  background: #FF9F30;
+  color: #121212;
 }
 
 .list {
